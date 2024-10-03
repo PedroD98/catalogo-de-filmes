@@ -1,0 +1,7 @@
+<h2>Editar gênero</h2>
+
+<div>
+  <%= render partial: 'form', locals: { genre: @genre } %>
+</div>
+
+<p><%= link_to 'Cancelar edição', genre_path(@genre) %></p>

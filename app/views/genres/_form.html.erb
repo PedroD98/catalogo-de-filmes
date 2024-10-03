@@ -1,0 +1,25 @@
+<% if flash[:notice] %>
+
+  <div style="margin: 10px 0px">
+    <%= flash[:notice] %>
+  </div>
+
+<% end %>
+
+<div>
+  <%= form_with model: genre do | f | %>
+
+    <div style="padding-bottom: 10px;">
+      <%= f.label 'Nome: '%>
+      <%= f.text_field :name %>
+    </div>
+
+    <div style="padding-bottom: 10px;">
+      <%= f.label 'Descrição: '%>
+      <%= f.text_area :description %>
+    </div>
+
+    <%= f.submit 'Cadastrar'%>
+
+  <% end %>
+</div>

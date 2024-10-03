@@ -1,0 +1,7 @@
+<h2>Editar diretor(a)</h2>
+
+<div>
+  <%= render partial: 'form', locals: { director: @director } %>
+</div>
+
+<p><%= link_to 'Cancelar edição', director_path(@director) %></p>

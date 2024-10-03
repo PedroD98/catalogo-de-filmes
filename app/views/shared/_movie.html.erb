@@ -1,0 +1,20 @@
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+  <% movies.each do | movie |%>
+    
+    <div style="text-align: center;">
+      <% if movie.poster.url %>
+        <%= link_to image_tag(movie.poster.url, width: "180", height: "250"), movie %>
+       
+        <div><strong><%= movie.name %></strong></div>
+        <div><strong><%= movie.release_year %></strong></div>
+
+
+      <% else %>
+
+        <strong><%= link_to movie.name, movie %></strong>
+
+      <% end %>
+    </div> 
+      
+  <% end %>
+</div>

@@ -1,0 +1,21 @@
+<h1>Diretores</h1>
+
+<div>
+<h4><%= link_to 'Cadastrar novo diretor(a)', new_director_path %></h4>
+</div>
+
+<p><h4>Diretores cadastrados:</h4></p>
+
+<div>
+  <ul>
+    <% @directors.each do | director |%>
+      <li>
+        <%= link_to director.name, director %>
+      </li>
+    <% end %>
+  </ul>    
+</div>
+
+<div>
+  <%= link_to 'Página inicial', root_path %>
+</div>

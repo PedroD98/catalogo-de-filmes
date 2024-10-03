@@ -1,0 +1,65 @@
+<h1><%= @movie.name %></h1>
+
+<div>
+  <% if @movie.poster.url %>
+    <%= image_tag(@movie.poster.url, width: "250", height: "350") %>
+  <% end %>
+</div>
+
+<div>
+  <h3>Sinopse:</h3>
+  <p><%= @movie.synopse%></p>
+</div>
+
+<div style="padding-bottom: 10px;">
+  <strong>Ano de lançamento:</strong> 
+  <%= @movie.release_year %>
+</div>
+
+<div style="padding-bottom: 10px;">
+  <strong>País de origem:</strong> 
+  <%= @movie.country_of_origin %>
+</div>
+
+<div style="padding-bottom: 10px;">
+  <strong>Duração:</strong> 
+  <%= @movie.length %> minutos
+</div>
+
+<div style="padding-bottom: 10px;">
+  <strong>Ano de lançamento:</strong> 
+  <%= @movie.release_year %>
+</div>
+
+<div style="padding-bottom: 10px;">
+  <strong>Gênero:</strong> 
+  <%= link_to @movie.genre.name, genre_path(@movie.genre) %>
+</div>
+
+<div style="padding-bottom: 10px;">
+  <strong>Diretor(a):</strong> 
+  <%= link_to @movie.director.name, director_path(@movie.director) %>
+</div>
+
+<div style="padding-bottom: 10px;">
+  <strong>Status de lançamento:</strong> 
+  <%= @movie.translate_release_status %>
+</div>
+
+<div style="padding-bottom: 10px;">
+  <strong>Status da publicação:</strong> 
+  <%= @movie.translate_status %>
+</div>
+
+<div>
+  <%= button_to 'Publicar', publish_movie_path, { method: 'patch'} %>
+  <br />
+  <%= button_to 'Remover publicação', withdraw_publication_movie_path, { method: 'patch'} %>
+</div>
+
+<div>
+  <p><strong><%= link_to 'Editar filme', edit_movie_path %></strong></p>
+</div>
+<div>
+    <p><%= link_to 'Filmes', movies_path %></p>
+</div>

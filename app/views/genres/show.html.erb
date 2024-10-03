@@ -1,0 +1,30 @@
+<h1><%= @genre.name %></h1>
+
+<div>
+  <% if flash[:notice] %>
+
+    <div style="margin: 10px 0px">
+      <%= flash[:notice] %>
+    </div>
+
+  <% end %>
+</div>
+
+<div>
+    <h3>Descrição:</h3>
+    <p><%= @genre.description %></p>
+</div>
+
+<div>
+  <% if @movies.any?%>
+    <p><h3>Filmes deste gênero:</h3></p>
+    <%= render partial: 'shared/movie', locals: {movies: @movies} %>
+  <% else %>
+    <div><h3>Não há filmes deste gênero cadastrados.</h3></div>
+    <div><%= link_to 'Cadastre um filme para este gênero', new_movie_path %></div>
+  <% end %>
+</div>
+
+<p><strong><%= link_to 'Editar gênero', edit_genre_path%></strong></p>
+
+<p><%= link_to 'Gêneros', genres_path%></p>

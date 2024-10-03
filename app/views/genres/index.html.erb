@@ -1,0 +1,21 @@
+<h1>Gêneros</h1>
+
+<div>
+<h4><%= link_to 'Cadastrar novo gênero', new_genre_path %></h4>
+</div>
+
+<p><h4>Gêneros cadastrados:</h4></p>
+
+<div>
+  <ul>
+    <% @genres.each do | genre |%>
+      <li>
+        <%= link_to genre.name, genre%>
+      </li>
+    <% end %>
+  </ul>    
+</div>
+
+<div>
+  <%= link_to 'Página inicial', root_path %>
+</div>

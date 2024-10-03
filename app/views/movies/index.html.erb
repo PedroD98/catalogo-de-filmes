@@ -1,0 +1,23 @@
+<h1>Filmes</h1>
+
+<div>
+<h4><%= link_to 'Cadastrar novo filme', new_movie_path %></h4>
+</div>
+
+<p><h3>Filmes já lançados:</h3></p>
+
+<div>
+  <%= render partial: 'shared/movie', locals: { movies: @released_movies}%>
+</div>
+
+<br />
+
+<p><h3>Filmes a serem lançados:</h3></p>
+
+<div>
+  <%= render partial: 'shared/movie', locals: { movies: @upcoming_movies}%>
+</div>
+
+<div>
+  <p><%= link_to 'Página inicial', root_path %></p>
+</div>

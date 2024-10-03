@@ -1,0 +1,39 @@
+<h1><%= @director.name %></h1>
+
+<div style="margin: 10px 0px">
+    <%= flash[:notice] %>
+</div>
+
+<div>
+    <h3>Mini biografia:</h3>
+    <p><%= @director.biography%></p>
+</div>
+
+<div style="padding-bottom: 10px;">
+      <strong>Nacionalidade: </strong>
+      <%= @director.nationality %>
+</div>
+
+<div style="padding-bottom: 10px;">
+      <strong>Data de Nacimento: </strong>
+      <%= @director.birth_date %>
+</div>
+
+<div style="padding-bottom: 10px;">
+      <strong>Gênero favorito: </strong>
+      <%= link_to @director.genre.name, genre_path(@director.genre.id) %>
+</div>
+
+<div>
+  <% if @movies.any?%>
+    <p><h3>Filmes dirigidos:</h3></p>
+    <%= render partial: 'shared/movie', locals: {movies: @movies} %>
+  <% else %>
+    <div><h3>Não há filmes dirigidos por esse diretor(a).</h3></div>
+    <div><%= link_to 'Cadastre um filme para este diretor(a)', new_movie_path %></div>
+  <% end %>
+</div>
+
+<p><strong><%= link_to 'Editar diretor(a)', edit_director_path %></strong></p>
+
+<p><%= link_to 'Diretores', directors_path%></p>

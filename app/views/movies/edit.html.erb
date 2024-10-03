@@ -1,0 +1,5 @@
+<h2>Editar filme</h2>
+
+<%= render partial: 'form', locals: { movie: @movie }%>
+
+<p><%= link_to 'Cancelar edição', movie_path(@movie) %></p>

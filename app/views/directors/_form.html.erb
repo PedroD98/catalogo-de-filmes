@@ -1,0 +1,32 @@
+<div>
+  <%= form_with model: director do | f | %>
+
+    <div style="padding-bottom: 10px;">
+      <%= f.label 'Nome: '%>
+      <%= f.text_field :name %>
+    </div>
+    
+    <div style="padding-bottom: 10px;">
+      <%= f.label 'Nacionalidade: '%>
+      <%= f.text_field :nationality %>
+    </div>
+    
+    <div style="padding-bottom: 10px;">
+      <%= f.label 'Data de nascimento: '%>
+      <%= f.date_field :birth_date %>
+    </div>
+
+    <div style="padding-bottom: 10px;">
+      <%= f.label 'Gênero favorito: '%>
+      <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+    </div>
+
+    <div style="padding-bottom: 10px;">
+      <%= f.label 'Mini biografia: '%>
+      <%= f.text_area :biography %>
+    </div>
+
+    <p><%= f.submit 'Cadastrar'%></p> 
+
+  <% end %>
+</div>
